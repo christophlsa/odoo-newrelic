@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+
+# set server timezone in UTC before time module imported
+__import__('os').environ['TZ'] = 'UTC'
+
+try:
+    import newrelic.agent
+    newrelic.agent.initialize()
+except ImportError:
+    newrelic = None
+
+import odoo
+
+if __name__ == "__main__":
+    odoo.cli.main()

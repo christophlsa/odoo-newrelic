@@ -11,4 +11,7 @@
     'depends': [
         'web',
     ],
+    'external_dependencies': {
+        'python': ['newrelic'],
+    },
 }
